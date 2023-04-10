@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1043853166880",
+    "project_id": "fun-trivia-e4a38",
+    "storage_bucket": "fun-trivia-e4a38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043853166880:android:9a3674d0bc9af3c743ef45",
+        "android_client_info": {
+          "package_name": "com.prateekshah.funtrivia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043853166880-skoi1radnv0ajdrcs50fu3dcvphjgsft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsxFrEJMlROFsBkc6DZAG9m-3c80DEdoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043853166880-skoi1radnv0ajdrcs50fu3dcvphjgsft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

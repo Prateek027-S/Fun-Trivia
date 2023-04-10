@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/room_id"
+            style="@style/CardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/b612_mono_bold_italic"
+            android:textColor="@color/text_color"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Room id: 76A57F" />
+
+        <ImageView
+            android:id="@+id/share_room_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share_24"
+            android:layout_marginStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/room_id"
+            app:layout_constraintStart_toEndOf="@id/room_id"
+            app:layout_constraintTop_toTopOf="@id/room_id"
+            tools:ignore="ContentDescription, ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/num_of_participants_joined"
+            style="@style/CardDetail"
+            android:textAlignment="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/carter_one"
+            android:layout_margin="20dp"
+            android:textSize="20sp"
+            android:paddingHorizontal="8dp"
+            android:textColor="@color/black"
+            tools:text="@string/num_of_participants_joined"
+            app:layout_constraintTop_toBottomOf="@id/room_id"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/loading_image"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@id/num_of_participants_joined"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:contentDescription="@string/waiting" />
+
+        <android.widget.Button
+            android:id="@+id/start_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="@color/purple_background"
+            android:fontFamily="@font/carter_one"
+            android:paddingHorizontal="28dp"
+            android:text="@string/start"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.826"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loading_image"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <android.widget.Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/rectangle"
+            android:backgroundTint="@color/purple_background"
+            android:fontFamily="@font/carter_one"
+            android:paddingHorizontal="25dp"
+            android:text="@string/cancel"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/start_btn"
+            app:layout_constraintTop_toBottomOf="@id/loading_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

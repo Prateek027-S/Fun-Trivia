@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purple_background">#6A5AE0</color>
+    <color name="text_color">#3F51B5</color>
+    <color name="default_button_color">#d7d5f6</color>
+    <color name="correct_button_color">#9ccc65</color>
+    <color name="incorrect_button_color">#e57373</color>
+    <color name="name_card_view_bg_color">#9187ff</color>
+    <color name="accuracy_card_view_bg_color">#8f87de</color>
+    <color name="score_card_view_bg_color">#8e9bd4</color>
+</resources>

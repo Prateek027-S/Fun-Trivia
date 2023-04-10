@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:backgroundTint="@color/name_card_view_bg_color"
+        android:alpha="0.8"
+        app:cardElevation="4dp"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="10dp"
+        app:strokeColor="@android:color/background_light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="25dp">
+
+            <TextView
+                android:id="@+id/rank"
+                style="@style/CardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/avg_time_per_question"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/player_name"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/player_name"
+                style="@style/CardDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="40dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/carter_one"
+                app:layout_constraintStart_toEndOf="@id/rank"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Player Name: Lorem Ipsum" />
+
+            <TextView
+                android:id="@+id/score"
+                style="@style/CardDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                tools:text="Score: 50"
+                android:textColor="@color/black"
+                android:fontFamily="@font/carter_one"
+                app:layout_constraintStart_toStartOf="@id/player_name"
+                app:layout_constraintTop_toBottomOf="@id/player_name" />
+
+            <TextView
+                android:id="@+id/avg_time_per_question"
+                style="@style/CardDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingVertical="8dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/carter_one"
+                tools:text="Avg. Time/Question: 5.456 s"
+                app:layout_constraintStart_toStartOf="@id/score"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@+id/score" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SettingsFragment">
+
+    <data>
+        <variable
+            name="settingsFragment"
+            type="com.prateekshah.funtrivia.SettingsFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/background_image"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="ContentDescription, ImageContrastCheck" />
+
+            <ImageView
+                android:id="@+id/app_icon"
+                android:layout_width="152dp"
+                android:layout_height="94dp"
+                android:src="@drawable/app_logo2"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck"
+                android:contentDescription="@string/app_icon" />
+
+            <TextView
+                android:id="@+id/app_name"
+                style="@style/CardTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/carter_one"
+                android:text="@string/app_name_capital"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/app_icon"
+                app:layout_constraintTop_toBottomOf="@id/app_icon" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/rules_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:backgroundTint="@color/name_card_view_bg_color"
+                app:backgroundTint="@color/name_card_view_bg_color"
+                android:src="@drawable/ic_question_mark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/rule" />
+
+            <ImageView
+                android:id="@+id/rectangle_2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:alpha="0.9"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/rectangle_2"
+                android:layout_marginTop="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/app_name"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/ic_single_player"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/player_name_text_layout"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/player_name_text_layout"
+                style="@style/inputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="30dp"
+                android:hint="@string/player_name"
+                android:minHeight="48dp"
+                android:paddingHorizontal="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/rectangle_2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/player_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/carter_one"
+                    android:inputType="text"
+                    android:textColor="#455A64"
+                    android:textSize="18sp"
+                    tools:text="Prateek" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/questions"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/no_of_questions_text_layout"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/no_of_questions_text_layout"
+                style="@style/inputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="10dp"
+                android:hint="@{@string/no_of_questions(settingsFragment.maxNumQuestions)}"
+                android:minHeight="48dp"
+                android:paddingHorizontal="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/player_name_text_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/no_of_questions"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/carter_one"
+                    android:inputType="number"
+                    android:textColor="#455A64"
+                    android:textSize="18sp"
+                    tools:ignore="TextContrastCheck"
+                    tools:text="15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/participants_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/ic_multiplayer"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/no_of_participants_text_layout"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/no_of_participants_text_layout"
+                style="@style/inputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/no_of_participants"
+                android:minHeight="48dp"
+                android:paddingHorizontal="15dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/no_of_questions_text_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/no_of_participants"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/carter_one"
+                    android:inputType="number"
+                    android:textColor="#455A64"
+                    android:textSize="18sp"
+                    tools:ignore="TextContrastCheck"
+                    tools:text="15" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/choose_difficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/carter_one"
+                android:text="@string/choose_difficulty"
+                android:textAppearance="@style/subHeading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/no_of_participants_text_layout" />
+
+            <RadioGroup
+                android:id="@+id/difficulty_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toStartOf="@id/choose_difficulty"
+                app:layout_constraintTop_toBottomOf="@id/choose_difficulty">
+
+                <RadioButton
+                    android:id="@+id/easy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/easy"
+                    android:textAppearance="@style/subHeading"
+                    android:fontFamily="@font/carter_one"
+                    android:textColor="@color/text_color"/>
+
+                <RadioButton
+                    android:id="@+id/medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/medium"
+                    android:textAppearance="@style/subHeading"
+                    android:fontFamily="@font/carter_one"
+                    android:textColor="@color/text_color"/>
+
+                <RadioButton
+                    android:id="@+id/hard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hard"
+                    android:textAppearance="@style/subHeading"
+                    android:fontFamily="@font/carter_one"
+                    android:textColor="@color/text_color"/>
+
+                <RadioButton
+                    android:id="@+id/any_difficulty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/any_difficulty"
+                    android:textAppearance="@style/subHeading"
+                    android:fontFamily="@font/carter_one"
+                    android:textColor="@color/text_color"/>
+
+            </RadioGroup>
+
+            <android.widget.Button
+                android:id="@+id/start_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="23dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/start_quiz"
+                android:paddingHorizontal="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:fontFamily="@font/carter_one"
+                android:textSize="16sp"
+                android:backgroundTint="@color/purple_background"
+                android:onClick="@{() -> settingsFragment.goToQuestionFragment()}"
+                app:layout_constraintTop_toBottomOf="@id/difficulty_options" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
