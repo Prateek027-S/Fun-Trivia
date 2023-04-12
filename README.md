@@ -7,7 +7,7 @@ With Multiplayer mode, you can create a Room and invite your friends to compete 
 ![image](https://user-images.githubusercontent.com/55046164/231476928-a8aa13c2-ba02-4d62-b5e8-a19969c817a9.png)
 
 ### While playing in Multiplayer Mode
-![image](https://user-images.githubusercontent.com/55046164/231481095-84ca89f7-036f-4475-98e2-25fc88676d80.png)
 ![image](https://user-images.githubusercontent.com/55046164/231477297-4e55fe52-65bd-4b04-8229-7875db4a83a2.png)
+![image](https://user-images.githubusercontent.com/55046164/231481095-84ca89f7-036f-4475-98e2-25fc88676d80.png)
 ![image](https://user-images.githubusercontent.com/55046164/231478813-eee23a5f-3e9e-4e09-af6c-877d937385f9.png)
 ![image](https://user-images.githubusercontent.com/55046164/231478928-dc214811-0c99-4d3a-9e39-36e401292189.png)
