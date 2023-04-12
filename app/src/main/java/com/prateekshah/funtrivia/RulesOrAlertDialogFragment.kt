@@ -33,7 +33,7 @@ class RulesOrAlertDialogFragment: DialogFragment() {
                 builder.setPositiveButton(getString(R.string.yes)){ _, _ ->
                     viewModel.timer?.cancel()
                     if (viewModel.mode > 0) {
-                        viewModel.updatePlayerDetailsInFS(forfeit = true)
+                        viewModel.updatePlayerDetailsInFS(viewModel.timeTakenList.average(), forfeit = true)
                         //if (count(forfeit==true)+count(CurrentQuestion==questionAmount)==currentNumOfParticipants then delete the room and participants
                         viewModel.setCurrentNumOfParticipants()
                     }

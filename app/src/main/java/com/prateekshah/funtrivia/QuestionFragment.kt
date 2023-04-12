@@ -268,9 +268,13 @@ class QuestionFragment : Fragment() {
             Timer().schedule(1000) {
                 runBlocking {
                     withContext(Dispatchers.Main) {
-                        activity?.let {
-                            findNavController().navigate(R.id.action_questionFragment_to_performanceFragment)
+                        try {
+                            activity?.let {
+                                findNavController().navigate(R.id.action_questionFragment_to_performanceFragment)
+                            }
                         }
+                        catch (_: Exception) {}
+                        Log.d("Nav Error", "Navigation error occurred at last question")
                     }
                 }
             }

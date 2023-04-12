@@ -316,7 +316,7 @@ class QuestionsViewModel: ViewModel() {
             }
     }
 
-    fun setCurrentNumOfParticipants(displayLeaderboardBtn: Boolean = false) {
+    fun setCurrentNumOfParticipants(displayLeaderboardBtn: Boolean = false, fragmentState: Int = 2) {
         db.collection("players")
             .whereEqualTo("RoomId", _roomId.value)
             .get()
@@ -325,7 +325,7 @@ class QuestionsViewModel: ViewModel() {
                     currentNumOfParticipants = task2.result.documents.size
                     Log.d("participantsValues", "currentNumOfParticipants=$currentNumOfParticipants")
                     if ((dialogMode == 1) || (_questionNumber.value!! > questionAmount)) {
-                        setNumParticipantsForfeit(displayLeaderboardBtn)
+                        setNumParticipantsForfeit(displayLeaderboardBtn, fragmentState)
                     }
                     else if (dialogMode == 3) {
                         deleteDoc("players", playerName)
@@ -341,7 +341,7 @@ class QuestionsViewModel: ViewModel() {
             }
     }
 
-    private fun setNumParticipantsForfeit(displayLeaderboardBtn: Boolean) {
+    private fun setNumParticipantsForfeit(displayLeaderboardBtn: Boolean, fragmentState: Int) {
         db.collection("players")
             .whereEqualTo("RoomId", _roomId.value)
             .whereEqualTo("Forfeit", true)
@@ -357,7 +357,7 @@ class QuestionsViewModel: ViewModel() {
                         }
                     }
                     else
-                        numParticipantsFinished()
+                        numParticipantsFinished(fragmentState)
                 }
                 else {
                     Log.d("participantsValues", "numParticipantsForfeit failed: ${task2.result.documents}")
@@ -365,10 +365,10 @@ class QuestionsViewModel: ViewModel() {
             }
     }
 
-    private fun numParticipantsFinished() {
+    private fun numParticipantsFinished(fragmentState: Int) {
         db.collection("players")
             .whereEqualTo("RoomId", _roomId.value)
-            .whereEqualTo("CurrentQuestionNum", questionAmount+2)
+            .whereEqualTo("CurrentQuestionNum", questionAmount+fragmentState)
             .get(Source.SERVER)
             .addOnCompleteListener { task2 ->
                 if (task2.isSuccessful) {

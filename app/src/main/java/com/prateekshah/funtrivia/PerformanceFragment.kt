@@ -29,6 +29,7 @@ class PerformanceFragment : Fragment() {
     private var binding: FragmentPerformanceBinding? = null
     private var calcAvgTimePerQuestion: Double? = null
     private var participants: ListenerRegistration? = null
+    private var forfeit: ListenerRegistration? = null
 
 
     override fun onCreateView(
@@ -80,10 +81,13 @@ class PerformanceFragment : Fragment() {
 
             if (questionsViewModel.isShowLeaderboardBtnClick) {
                 participants?.remove()
+                forfeit?.remove()
                 setVisibility(View.INVISIBLE, View.VISIBLE)
             }
             else
                 setVisibility(View.VISIBLE, View.INVISIBLE)
+
+            calcAvgTimePerQuestion?.let { questionsViewModel.updatePlayerDetailsInFS(it) }
 
             participants = questionsViewModel.db.collection("players")
                 .whereEqualTo("RoomId", questionsViewModel.roomId.value.toString())
@@ -100,7 +104,21 @@ class PerformanceFragment : Fragment() {
                         Log.d("To Show Leaderboard", "currentNumParticipants=${questionsViewModel.currentNumOfParticipants}, numParticipantsInPerformFrag=${questionsViewModel.numParticipantsInPerformFrag}, numParticipantsForfeit=${questionsViewModel.numParticipantsForfeit}")
                     }
                 }
-            calcAvgTimePerQuestion?.let { questionsViewModel.updatePlayerDetailsInFS(it) }
+
+            forfeit = questionsViewModel.db.collection("players")
+                .whereEqualTo("RoomId", questionsViewModel.roomId.value.toString())
+                .whereEqualTo("Forfeit", true)
+                .addSnapshotListener { value, error ->
+                    error?.let {
+                        Log.e("Waiting room error", "${it.message}")
+                        return@addSnapshotListener
+                    }
+
+                    value?.let {
+                        questionsViewModel.setCurrentNumOfParticipants(true)
+                        Log.d("To Show Leaderboard", "currentNumParticipants=${questionsViewModel.currentNumOfParticipants}, numParticipantsInPerformFrag=${questionsViewModel.numParticipantsInPerformFrag}, numParticipantsForfeit=${questionsViewModel.numParticipantsForfeit}")
+                    }
+                }
         }
         binding!!.showLeaderboardBtn.setOnClickListener {
             showLeaderboard()
@@ -127,9 +145,10 @@ class PerformanceFragment : Fragment() {
     fun customBackBehavior() {
         if (questionsViewModel.mode > 0) {
             participants?.remove()
+            forfeit?.remove()
             questionsViewModel.resetToShowLeaderboardBtnAndNumPerformFrag()
             calcAvgTimePerQuestion?.let { questionsViewModel.updatePlayerDetailsInFS(it, true) }
-            questionsViewModel.setCurrentNumOfParticipants()
+            questionsViewModel.setCurrentNumOfParticipants(fragmentState = 1)
         }
         if (questionsViewModel.mode < 2)
             findNavController().navigate(com.example.funtrivia.R.id.action_performanceFragment_to_settingsFragment)
@@ -155,6 +174,7 @@ class PerformanceFragment : Fragment() {
     private fun showLeaderboard() {
         Log.d("Show Leaderboard", "inside showLeaderboard()")
         participants?.remove()
+        forfeit?.remove()
         questionsViewModel.isShowLeaderboardBtnClick = true
         binding!!.showLeaderboardBtn.visibility = View.GONE
         setVisibility(View.GONE, View.VISIBLE)
