@@ -13,4 +13,4 @@ With Multiplayer mode, you can create a Room and invite your friends to compete 
 ![image](https://user-images.githubusercontent.com/55046164/231478813-eee23a5f-3e9e-4e09-af6c-877d937385f9.png)
 ![image](https://user-images.githubusercontent.com/55046164/231478928-dc214811-0c99-4d3a-9e39-36e401292189.png)
 
-#### Note: You can dowload the apk of the app from the "Released" section!
+#### Note: You can dowload the apk of the app from the "Releases" section!
