@@ -1,6 +1,7 @@
 # Fun-Trivia
 This is an online Quiz Application. The user can play in Single Player or Multiplayer mode. You can test your knowledge in a variety of topics from General Knowledge to Movies and Entertainment! At the end of the quiz a detailed report of your performance is shown(in case of multiplayer mode, leaderboard can also be seen when everyone finished the quiz).
 With Multiplayer mode, you can create a Room and invite your friends to compete with them!
+#### Note: You can download the apk of the app from the "Releases" section!
  ### Glimpses of the App
  ![image](https://user-images.githubusercontent.com/55046164/231476188-1cb959f2-047e-4377-a20c-326a10a4d958.png)
 ![image](https://user-images.githubusercontent.com/55046164/231476497-3b484712-d52d-4007-83b8-c60b7fe52c46.png)
@@ -12,5 +13,3 @@ With Multiplayer mode, you can create a Room and invite your friends to compete 
 ![image](https://user-images.githubusercontent.com/55046164/231481095-84ca89f7-036f-4475-98e2-25fc88676d80.png)
 ![image](https://user-images.githubusercontent.com/55046164/231478813-eee23a5f-3e9e-4e09-af6c-877d937385f9.png)
 ![image](https://user-images.githubusercontent.com/55046164/231478928-dc214811-0c99-4d3a-9e39-36e401292189.png)
-
-#### Note: You can download the apk of the app from the "Releases" section!
